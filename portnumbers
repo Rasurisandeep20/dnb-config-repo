@@ -1,2 +1,5 @@
 portnumbers                 service
 9000                        accountservice
+8888                        config-server
+8761                        discovery-server
+9001                        customerservice
