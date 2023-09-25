@@ -17,7 +17,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
 server:
-  port: 9000
+  port: 0
   error:
     include-message: always
 eureka:
