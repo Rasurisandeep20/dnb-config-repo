@@ -1,8 +1,6 @@
 spring:
   application:
     name: api-gateway-service
-  config:
-    import: optional:configserver:http://localhost:8888
   cloud:
     gateway:
       routes:
@@ -38,4 +36,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh,health
+        include: "*"
