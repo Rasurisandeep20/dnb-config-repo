@@ -1,10 +1,19 @@
 spring:
   application:
     name: api-gateway-service
-    hikari:
-      connection-timeout: 60000
-      maximum-pool-size: 5
-      auto-commit: true
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    gateway:
+      routes:
+      - id: ACCOUNT-SERVICE
+        uri: lb://ACCOUNT-SERVICE
+        predicates:
+        - Path=/api/account/**
+      - id: CUSTOMER-SERVICE
+        uri: lb://CUSTOMER-SERVICE
+        predicates:
+        - Path=/api/customer/** 
   jpa:
     hibernate:
       ddl-auto: update
